@@ -4,6 +4,11 @@
   (require 'package)
   (add-to-list
    'package-archives
-   '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
-   ;; '("melpa" . "http://melpa.milkbox.net/packages/")
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
    t))
+
+;; ensime
+(use-package ensime
+  :ensure t
+  :pin melpa)
