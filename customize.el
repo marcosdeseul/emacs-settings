@@ -10,24 +10,15 @@
 ;; cmd - h to hide
 (global-set-key (kbd "M-h") 'ns-do-hide-emacs)
 
-;; custom theme
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages
-   (quote
-    (protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2)))) ;; installed via melpa
+;; neotree
+(global-set-key (kbd "C-c t") 'neotree-toggle)
+
+(setq auto-mode-alist (cons '("\\.jsx" . jsx-mode) auto-mode-alist))
 
 ;; emacs backup
 ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
 ;; https://www.emacswiki.org/emacs/BackupDirectory
 ;; make backup to a designated dir, mirroring the full path
-
 (defun my-backup-file-name (fpath)
   "Return a new file path of a given file path.
 If the new path's directories does not exist, create them."
@@ -38,6 +29,18 @@ If the new path's directories does not exist, create them."
     backupFilePath))
 
 (setq make-backup-file-name-function 'my-backup-file-name)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (misterioso)))
+ '(package-selected-packages
+   (quote
+    (swift3-mode dockerfile-mode neotree elixir-mode haskell-mode jsx-mode protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2))))
 
 (set-cursor-color "white")
 
