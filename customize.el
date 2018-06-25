@@ -44,4 +44,6 @@ If the new path's directories does not exist, create them."
 
 (set-cursor-color "white")
 
-(set-default-font "Monaco 14")
+(set-default-font "Monaco 13")
+
+(set-face-background 'region "#666")
