@@ -1,3 +1,8 @@
+;; font
+(set-default-font "Monaco 14")
+(set-cursor-color "white")
+(set-face-background 'region "#666")
+
 ;; auto linum
 (global-linum-mode 1)
 
@@ -13,23 +18,7 @@
 ;; neotree
 (global-set-key (kbd "C-c t") 'neotree-toggle)
 
-(setq auto-mode-alist (cons '("\\.jsx" . jsx-mode) auto-mode-alist))
-
-;; emacs backup
-;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
-;; https://www.emacswiki.org/emacs/BackupDirectory
-;; make backup to a designated dir, mirroring the full path
-(defun my-backup-file-name (fpath)
-  "Return a new file path of a given file path.
-If the new path's directories does not exist, create them."
-  (let* ((backupRootDir "~/.emacs.d/emacs-backup/")
-	 (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath )) ; remove Windows driver letter in path, for example, “C:”
-	 (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir filePath "~") )) )
-    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
-    backupFilePath))
-
-(setq make-backup-file-name-function 'my-backup-file-name)
-
+;; custom theme
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,10 +29,22 @@ If the new path's directories does not exist, create them."
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
    (quote
-    (swift3-mode dockerfile-mode neotree elixir-mode haskell-mode jsx-mode protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2))))
+    (swift3-mode dockerfile-mode neotree elixir-mode haskell-mode jsx-mode protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2 md-mode)))) ;; installed via melpa
 
-(set-cursor-color "white")
+(setq auto-mode-alist (cons '("\\.jsx" . jsx-mode) auto-mode-alist))
 
-(set-default-font "Monaco 13")
+;; emacs backup
+;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
+;; https://www.emacswiki.org/emacs/BackupDirectory
+;; make backup to a designated dir, mirroring the full path
 
-(set-face-background 'region "#666")
+(defun my-backup-file-name (fpath)
+  "Return a new file path of a given file path.
+If the new path's directories does not exist, create them."
+  (let* ((backupRootDir "~/.emacs.d/emacs-backup/")
+	 (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath )) ; remove Windows driver letter in path, for example, “C:”
+	 (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir filePath "~") )) )
+    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
+    backupFilePath))
+
+(setq make-backup-file-name-function 'my-backup-file-name)
