@@ -22,10 +22,10 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (misterioso)))
- '(js2-basic-offset 2) 
+ '(js2-basic-offset 2)
  '(package-selected-packages
    (quote
-    (swift3-mode dockerfile-mode neotree elixir-mode haskell-mode jsx-mode rjsx-mode protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2 md-mode)))) ;; installed via melpa
+    (swift3-mode dockerfile-mode neotree elixir-mode haskell-mode jsx-mode rjsx-mode protobuf-mode clojure-mode go-mode yaml-mode scala-mode scala-mode2 md-mode css-mode)))) ;; installed via melpa
 
 ;; emacs backup
 ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
@@ -51,3 +51,5 @@ If the new path's directories does not exist, create them."
 ;; javascript hook
 (require 'rjsx-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+;; css
+(setq css-indent-offset 2)
