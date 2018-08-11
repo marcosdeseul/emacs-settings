@@ -1,7 +1,7 @@
 ;; font
 (set-default-font "Monaco 14")
 (set-cursor-color "white")
-(set-face-background 'region "#666")
+(set-face-attribute 'region nil :background "#666" :foreground "#ffffff")
 
 ;; auto linum
 (global-linum-mode 1)
@@ -48,3 +48,5 @@ If the new path's directories does not exist, create them."
     backupFilePath))
 
 (setq make-backup-file-name-function 'my-backup-file-name)
+
+(setq js-indent-level 2)
