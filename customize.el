@@ -51,5 +51,8 @@ If the new path's directories does not exist, create them."
 ;; javascript hook
 (require 'rjsx-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(setq js2-strict-missing-semi-warning nil)
+(setq js2-missing-semi-one-line-override nil)
+
 ;; css
 (setq css-indent-offset 2)
