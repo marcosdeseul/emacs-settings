@@ -44,3 +44,6 @@
 (defalias 'gwsm 'global-whitespace-mode)
 (defalias 'vlm 'visual-line-mode)
 (defalias 'glm 'global-linum-mode)
+
+; custom
+(defalias 'ar 'align-regexp)
